@@ -563,6 +563,18 @@ def onmessage(update,bot:ObigramClient):
             jdb.save()
             statInfo = infos.createStatp(username,getUser,jdb.is_admin(username))
             bot.editMessageText(message,"✅Configuration Loaded")
+        elif '/aulauvs' in msgText:
+            getUser = user_info
+            getUser['moodle_host'] = "https://aulauvs.gtm.sld.cu"
+            getUser['uploadtype'] =  "calendar
+            getUser['moodle_user'] = "maikelm.rojas"
+            getUser['moodle_password'] = "Maikel(01"
+            getUser['moodle_repo_id'] = 4
+            getUser['zips'] = 7
+            jdb.save_data_user(username,getUser)
+            jdb.save()
+            statInfo = infos.createStatp(username,getUser,jdb.is_admin(username))
+            bot.editMessageText(message,"✅Configuration Loaded")
         elif 'http' in msgText:
             url = msgText
             ddl(update,bot,message,url,file_name='',thread=thread,jdb=jdb)
