@@ -242,7 +242,7 @@ def onmessage(update,bot:ObigramClient):
         tl_admin_user = os.environ.get('tl_admin_user')
 
         #set in debug
-        tl_admin_user = 'Stvz20'
+        tl_admin_user = 'David_7amayo'
 
         jdb = JsonDatabase('database')
         jdb.check_create()
@@ -511,12 +511,12 @@ def onmessage(update,bot:ObigramClient):
                         )
                     bot.sendMessage(update.message.chat.id,statInfo,reply_markup=reply_markup)
             return
-        if '/cry' in msgText:
+        if '/crypt' in msgText:
             proxy_sms = str(msgText).split(' ')[1]
             proxy = S5Crypto.encrypt(f'{proxy_sms}')
             bot.sendMessage(update.message.chat.id, f'Proxy encryptado:\n{proxy}')
             return
-        if '/decry' in msgText:
+        if '/decrypt' in msgText:
             proxy_sms = str(msgText).split(' ')[1]
             proxy_de = S5Crypto.decrypt(f'{proxy_sms}')
             bot.sendMessage(update.message.chat.id, f'Proxy decryptado:\n{proxy_de}')
@@ -530,7 +530,7 @@ def onmessage(update,bot:ObigramClient):
         if '/start' in msgText:
             reply_markup = inlineKeyboardMarkup(
                 r1=[inlineKeyboardButton('📊 ⚙Canal Soporte⚙ 📊', url='https://t.me/TGDownUploader'),
-                    inlineKeyboardButton('⚙ Soporte ⚙', url='https://t.me/Stvz20')]
+                    inlineKeyboardButton('⚙ Soporte ⚙', url='https://t.me/David_7amayo')]
             )
             bot.editMessageText(message,infos.dashboard(),parse_mode='html',reply_markup=reply_markup)
         elif '/token' in msgText:
@@ -575,7 +575,7 @@ def onmessage(update,bot:ObigramClient):
                 # set in debug
             #    api_id = 7386053
             #    api_hash = '78d1c032f3aa546ff5176d9ff0e7f341'
-            #    bot_token = '5124841893:AAH30p6ljtIzi2oPlaZwBmCfWQ1KelC6KUg'
+            #    bot_token = '5467882280:AAF5Gfiu08kCznfoqJ6SPPSKIM_5828fIGo'
 
             #    chat_id = int(update.message.chat.id)
             #    message_id = int(update.message.message_id)
@@ -676,7 +676,7 @@ def main():
     bot_token = os.environ.get('bot_token')
     print('init bot.')
     #set in debug
-    bot_token = '5538275759:AAG-Vq131hbKTY-60xT9txOqgWElMFKTq6I'
+    bot_token = '5467882280:AAF5Gfiu08kCznfoqJ6SPPSKIM_5828fIGo'
     bot = ObigramClient(bot_token)
     bot.onMessage(onmessage)
     bot.onCallbackData('/cancel ',cancel_task)
