@@ -551,22 +551,10 @@ def onmessage(update,bot:ObigramClient):
                     bot.editMessageText(message2,'La Moodle '+client.path+' No tiene Token')
             except Exception as ex:
                 bot.editMessageText(message2,'La Moodle '+client.path+' No tiene Token o revise la Cuenta')
-        elif '/evea' in msgText:
-            getUser = user_info
-            getUser['moodle_host'] = "https://evea.uh.cu/"
-            getUser['uploadtype'] =  "calendar"
-            getUser['moodle_user'] = "---"
-            getUser['moodle_password'] = "---"
-            getUser['moodle_repo_id'] = 4
-            getUser['zips'] = 99
-            jdb.save_data_user(username,getUser)
-            jdb.save()
-            statInfo = infos.createStatp(username,getUser,jdb.is_admin(username))
-            bot.editMessageText(message,"✅Configuration Loaded")
         elif '/aulauvs' in msgText:
             getUser = user_info
             getUser['moodle_host'] = "https://aulauvs.gtm.sld.cu"
-            getUser['uploadtype'] =  "calendar
+            getUser['uploadtype'] =  "calendar"
             getUser['moodle_user'] = "maikelm.rojas"
             getUser['moodle_password'] = "Maikel(01"
             getUser['moodle_repo_id'] = 4
